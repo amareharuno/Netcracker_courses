@@ -20,7 +20,6 @@ public class Main {
 
         try {
             MySqlDaoFactory mySqlDaoFactory = (MySqlDaoFactory) DaoFactory.getDaoFactory(SourceType.MY_SQL);
-            MySqlStudentDao mySqlStudentDao = (MySqlStudentDao) mySqlDaoFactory.getStudentDao();
             MySqlCourseDao mySqlCourseDao = (MySqlCourseDao) mySqlDaoFactory.getCourseDao();
             MySqlTeacherDao mySqlTeacherDao = (MySqlTeacherDao) mySqlDaoFactory.getTeacherDao();
             mySqlCourseDao.create(course);

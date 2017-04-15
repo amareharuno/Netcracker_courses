@@ -1,5 +1,7 @@
 package by.netcracker.bsuir.pz2.entity;
 
+import java.util.Objects;
+
 public class Course {
     private int id;
     private String subject;
@@ -100,28 +102,19 @@ public class Course {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Course course = (Course) o;
-
-        return id == course.id
-                && lessonsCount == course.lessonsCount
-                && lessonDuration == course.lessonDuration
-                && courseDuration == course.courseDuration
-                && subject.equals(course.subject)
-                && courseName.equals(course.courseName)
-                && teacher.equals(course.teacher);
+        return id == course.id &&
+                lessonsCount == course.lessonsCount &&
+                lessonDuration == course.lessonDuration &&
+                courseDuration == course.courseDuration &&
+                Objects.equals(subject, course.subject) &&
+                Objects.equals(courseName, course.courseName) &&
+                Objects.equals(teacher, course.teacher);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + subject.hashCode();
-        result = 31 * result + courseName.hashCode();
-        result = 31 * result + lessonsCount;
-        result = 31 * result + lessonDuration;
-        result = 31 * result + teacher.hashCode();
-        result = 31 * result + courseDuration;
-        return result;
+        return Objects.hash(id, subject, courseName, lessonsCount, lessonDuration, teacher, courseDuration);
     }
 
     @Override

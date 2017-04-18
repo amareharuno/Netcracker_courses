@@ -1,4 +1,4 @@
-package by.netcracker.bsuir.pz2.connectionpool;
+package by.netcracker.bsuir.pz2.connectionPool;
 
 import by.netcracker.bsuir.pz2.enumeration.MySqlPropertyKey;
 

@@ -1,11 +1,13 @@
 package by.netcracker.bsuir.pz2.factory;
 
-import by.netcracker.bsuir.pz2.entitydaointerface.CourseDao;
-import by.netcracker.bsuir.pz2.entitydaointerface.StudentDao;
-import by.netcracker.bsuir.pz2.entitydaointerface.TeacherDao;
+import by.netcracker.bsuir.pz2.daoInterface.CourseDao;
+import by.netcracker.bsuir.pz2.daoInterface.StudentDao;
+import by.netcracker.bsuir.pz2.daoInterface.TeacherDao;
+import by.netcracker.bsuir.pz2.daoInterface.UserDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlCourseDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlStudentDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlTeacherDao;
+import by.netcracker.bsuir.pz2.mysql.MySqlUserDao;
 
 public class MySqlDaoFactory extends DaoFactory {
 
@@ -18,6 +20,11 @@ public class MySqlDaoFactory extends DaoFactory {
 
     static MySqlDaoFactory getInstance() {
         return Handler.INSTANCE;
+    }
+
+    @Override
+    public UserDao getUserDao() {
+        return MySqlUserDao.getInstance();
     }
 
     @Override
@@ -34,5 +41,4 @@ public class MySqlDaoFactory extends DaoFactory {
     public StudentDao getStudentDao() {
         return MySqlStudentDao.getInstance();
     }
-
 }

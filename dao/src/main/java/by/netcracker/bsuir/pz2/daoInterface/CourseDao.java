@@ -1,4 +1,4 @@
-package by.netcracker.bsuir.pz2.entitydaointerface;
+package by.netcracker.bsuir.pz2.daoInterface;
 
 import by.netcracker.bsuir.pz2.entity.Course;
 

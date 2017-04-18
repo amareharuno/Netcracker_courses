@@ -1,9 +1,9 @@
 package by.netcracker.bsuir.pz2.mysql;
 
-import by.netcracker.bsuir.pz2.connectionpool.ConnectionPool;
-import by.netcracker.bsuir.pz2.constantstring.ExceptionMessage;
-import by.netcracker.bsuir.pz2.constantstring.StudentTable;
-import by.netcracker.bsuir.pz2.entitydaointerface.StudentDao;
+import by.netcracker.bsuir.pz2.connectionPool.ConnectionPool;
+import by.netcracker.bsuir.pz2.constantString.ExceptionMessage;
+import by.netcracker.bsuir.pz2.constantString.StudentTable;
+import by.netcracker.bsuir.pz2.daoInterface.StudentDao;
 import by.netcracker.bsuir.pz2.entity.Student;
 
 import java.sql.Connection;

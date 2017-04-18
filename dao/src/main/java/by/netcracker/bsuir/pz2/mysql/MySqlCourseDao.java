@@ -1,10 +1,10 @@
 package by.netcracker.bsuir.pz2.mysql;
 
-import by.netcracker.bsuir.pz2.connectionpool.ConnectionPool;
-import by.netcracker.bsuir.pz2.constantstring.ExceptionMessage;
-import by.netcracker.bsuir.pz2.entitydaointerface.CourseDao;
+import by.netcracker.bsuir.pz2.connectionPool.ConnectionPool;
+import by.netcracker.bsuir.pz2.constantString.ExceptionMessage;
+import by.netcracker.bsuir.pz2.daoInterface.CourseDao;
 import by.netcracker.bsuir.pz2.entity.Course;
-import by.netcracker.bsuir.pz2.constantstring.CourseTable;
+import by.netcracker.bsuir.pz2.constantString.CourseTable;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

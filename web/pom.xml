@@ -10,8 +10,20 @@
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
-
     <artifactId>web</artifactId>
+    <build>
+        <finalName>web-test</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -32,8 +44,4 @@
             <version>3.1.0</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <finalName>servlet-test</finalName>
-    </build>
 </project>

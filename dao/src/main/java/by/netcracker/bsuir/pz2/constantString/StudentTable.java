@@ -1,4 +1,4 @@
-package by.netcracker.bsuir.pz2.constantstring;
+package by.netcracker.bsuir.pz2.constantString;
 
 public class StudentTable {
     public static final String STUDENT_ID = "studentId";

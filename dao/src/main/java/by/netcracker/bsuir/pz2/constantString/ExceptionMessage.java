@@ -19,4 +19,10 @@ public class ExceptionMessage {
     public static final String STUDENT_UPDATE_SQL_EXCEPTION = "SQLException in  MySQLStudentDao, update";
     public static final String STUDENT_DELETE_SQL_EXCEPTION = "SQLException in MySQLStudentDao, delete";
     public static final String STUDENT_GET_ALL_SQL_EXCEPTION = "SQLException in MySQLStudentDao, getAll";
+
+    public static final String USER_CREATE_SQL_EXCEPTION = "SQLException in  MySQLUserDao, create";
+    public static final String USER_GET_BY_ID_SQL_EXCEPTION = "SQLException in  MySQLUserDao, getUserById";
+    public static final String USER_UPDATE_SQL_EXCEPTION = "SQLException in  MySQLUserDao, update";
+    public static final String USER_DELETE_SQL_EXCEPTION = "SQLException in MySQLUserDao, delete";
+    public static final String USER_GET_ALL_SQL_EXCEPTION = "SQLException in MySQLUserDao, getAll";
 }

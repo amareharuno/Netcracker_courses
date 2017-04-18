@@ -8,6 +8,9 @@ public class User {
     private String password;
     private boolean isTeacher;
 
+    public User() {
+    }
+
     public User(int id, String login, String password, boolean isTeacher) {
         this.id = id;
         this.login = login;
@@ -43,8 +46,8 @@ public class User {
         return isTeacher;
     }
 
-    public void setTeacher(boolean teacher) {
-        isTeacher = teacher;
+    public void setIsTeacher(boolean isTeacher) {
+        isTeacher = isTeacher;
     }
 
     @Override

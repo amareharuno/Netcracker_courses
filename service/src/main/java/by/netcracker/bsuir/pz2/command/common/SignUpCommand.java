@@ -18,7 +18,7 @@ public class SignUpCommand implements Command {
     }
 
     public String execute(HttpServletRequest request) {
-        String page;
+        String pathToPage;
 
         String firstName = request.getParameter(HttpRequestParameter.FIRST_NAME);
         String lastName = request.getParameter(HttpRequestParameter.LAST_NAME);
@@ -45,7 +45,7 @@ public class SignUpCommand implements Command {
             // в метод create и запрос добавить поле userId
 
             mySqlDaoFactory.getTeacherDao().create(teacher);
-            page = PageLocation.getInstance().getPageLocation(PageLocationKey.TEACHER_PROFILE);
+            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.TEACHER_PROFILE);
         }
         else {
             Student student = new Student(firstName, lastName, middleName);
@@ -53,9 +53,9 @@ public class SignUpCommand implements Command {
             // то же, что для учителя
 
             mySqlDaoFactory.getStudentDao().create(student);
-            page = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
+            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
         }
 
-        return page;
+        return pathToPage;
     }
 }

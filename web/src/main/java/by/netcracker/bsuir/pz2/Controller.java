@@ -3,6 +3,7 @@ package by.netcracker.bsuir.pz2;
 import by.netcracker.bsuir.pz2.command.Command;
 import by.netcracker.bsuir.pz2.command.CommandFactory;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +23,13 @@ public class Controller extends HttpServlet {
          executeQuery(request, response);
     }
 
-    private void executeQuery(HttpServletRequest request, HttpServletResponse response) {
+    private void executeQuery(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
         Command command = CommandFactory.getInstance().createCommand(request);
-        command.execute(request);
+        String pathToPage = command.execute(request);
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pathToPage);
+        dispatcher.forward(request, response);
     }
 }

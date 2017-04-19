@@ -15,7 +15,7 @@ public class SignInCommand implements Command {
     }
 
     public String execute(HttpServletRequest request) {
-        String page;
+        String pathToPage;
         boolean withErrorMessage;
 
         String login = request.getParameter(HttpRequestParameter.LOGIN);
@@ -27,14 +27,14 @@ public class SignInCommand implements Command {
 
         if (user == null) {
             withErrorMessage = true;
-            page = PageLocation.getInstance().getPageLocation(PageLocationKey.SIGN_IN_PAGE);
+            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.SIGN_IN_PAGE);
             // такого пользователя не существует (поменять signInPage.html на signInPage.jsp)
         } else {
             withErrorMessage = false;
-            page = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
+            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
             // связать user с teacher & student. Узнать, чей профиль открывать
         }
 
-        return page;
+        return pathToPage;
     }
 }

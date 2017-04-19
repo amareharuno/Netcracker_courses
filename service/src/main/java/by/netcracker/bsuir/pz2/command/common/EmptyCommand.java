@@ -9,8 +9,8 @@ public class EmptyCommand implements Command {
     }
 
     public String execute(HttpServletRequest request) {
-        String page = null;
+        String pathToPage = null;
 
-        return page;
+        return null;
     }
 }

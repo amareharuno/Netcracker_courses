@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface TeacherDao {
-    public boolean create(Teacher teacher) throws SQLException;
-    public Teacher getTeacherById(int teacherId) throws SQLException;
-    public boolean update(Teacher teacher) throws SQLException;
-    public boolean delete(int teacherId) throws SQLException;
+    public boolean create(Teacher teacher);
+    public Teacher getTeacherById(int teacherId);
+    public boolean update(Teacher teacher);
+    public boolean delete(int teacherId);
 
     public List<Teacher> getAll() throws SQLException;
 }

@@ -29,7 +29,7 @@ public class MySqlTeacherDao implements TeacherDao {
     }
 
     @Override
-    public boolean create(Teacher teacher) throws SQLException {
+    public boolean create(Teacher teacher) {
         boolean isCreated;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(TeacherTable.CREATE_TEACHER)) {
@@ -48,7 +48,7 @@ public class MySqlTeacherDao implements TeacherDao {
     }
 
     @Override
-    public Teacher getTeacherById(int teacherId) throws SQLException {
+    public Teacher getTeacherById(int teacherId) {
         Teacher teacher = null;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(TeacherTable.GET_TEACHER)) {
@@ -70,7 +70,7 @@ public class MySqlTeacherDao implements TeacherDao {
     }
 
     @Override
-    public boolean update(Teacher teacher) throws SQLException {
+    public boolean update(Teacher teacher) {
         boolean isUpdated;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(TeacherTable.UPDATE_TEACHER)) {
@@ -89,7 +89,7 @@ public class MySqlTeacherDao implements TeacherDao {
     }
 
     @Override
-    public boolean delete(int teacherId) throws SQLException {
+    public boolean delete(int teacherId) {
         boolean isDeleted;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(TeacherTable.DELETE_TEACHER)) {
@@ -105,7 +105,7 @@ public class MySqlTeacherDao implements TeacherDao {
     }
 
     @Override
-    public List<Teacher> getAll() throws SQLException {
+    public List<Teacher> getAll() {
         List<Teacher> list = new ArrayList<>();
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(TeacherTable.GET_TEACHERS)) {

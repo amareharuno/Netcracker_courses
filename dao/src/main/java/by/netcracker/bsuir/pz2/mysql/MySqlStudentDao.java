@@ -29,7 +29,7 @@ public class MySqlStudentDao implements StudentDao {
     }
 
     @Override
-    public boolean create(Student student) throws SQLException {
+    public boolean create(Student student) {
         boolean isCreated;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(StudentTable.CREATE_STUDENT)) {

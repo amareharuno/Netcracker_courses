@@ -28,7 +28,7 @@ public class MySqlCourseDao implements CourseDao {
         return Handler.INSTANCE;
     }
 
-    public boolean create(Course course) throws SQLException {
+    public boolean create(Course course) {
         boolean isCreated;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.CREATE_COURSE)) {
@@ -49,10 +49,10 @@ public class MySqlCourseDao implements CourseDao {
         return isCreated;
     }
 
-    public Course getCourseById(int courseId) throws SQLException{
+    public Course getCourseById(int courseId) {
         Course course = null;
         try (Connection connection = connectionPool.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.GET_COURSE)) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.GET_COURSE)){
                 preparedStatement.setInt(1, courseId);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -73,7 +73,7 @@ public class MySqlCourseDao implements CourseDao {
         return course;
     }
 
-    public boolean update(Course course) throws SQLException {
+    public boolean update(Course course) {
         boolean isUpdated;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.UPDATE_COURSE)) {
@@ -94,7 +94,7 @@ public class MySqlCourseDao implements CourseDao {
         return isUpdated;
     }
 
-    public boolean delete(int courseId) throws SQLException {
+    public boolean delete(int courseId) {
         boolean isDeleted;
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.DELETE_COURSE)) {
@@ -112,7 +112,7 @@ public class MySqlCourseDao implements CourseDao {
     public List<Course> getAll() throws SQLException{
         List<Course> list = new ArrayList<>();
         try (Connection connection = connectionPool.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.GET_COURSES)) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(CourseTable.GET_COURSES)){
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     Course course = new Course();

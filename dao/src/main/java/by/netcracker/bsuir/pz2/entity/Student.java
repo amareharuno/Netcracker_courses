@@ -7,6 +7,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String middleName;
+    private int userId;
 
     public Student() {
     }
@@ -54,6 +55,14 @@ public class Student {
 
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Override

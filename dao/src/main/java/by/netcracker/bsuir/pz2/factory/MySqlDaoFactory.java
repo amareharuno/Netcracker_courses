@@ -18,7 +18,7 @@ public class MySqlDaoFactory extends DaoFactory {
         private static final MySqlDaoFactory INSTANCE = new MySqlDaoFactory();
     }
 
-    static MySqlDaoFactory getInstance() {
+    public static MySqlDaoFactory getInstance() {
         return Handler.INSTANCE;
     }
 

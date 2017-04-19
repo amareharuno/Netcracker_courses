@@ -6,7 +6,6 @@ import by.netcracker.bsuir.pz2.factory.DaoFactory;
 import by.netcracker.bsuir.pz2.factory.MySqlDaoFactory;
 import by.netcracker.bsuir.pz2.entity.Course;
 import by.netcracker.bsuir.pz2.mysql.MySqlCourseDao;
-import by.netcracker.bsuir.pz2.mysql.MySqlStudentDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlTeacherDao;
 
 import java.sql.SQLException;

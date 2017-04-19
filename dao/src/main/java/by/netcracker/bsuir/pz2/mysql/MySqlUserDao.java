@@ -20,6 +20,14 @@ public class MySqlUserDao implements UserDao{
     private MySqlUserDao() {
     }
 
+    private static final class Handler {
+        private static final MySqlUserDao INSTANCE = new MySqlUserDao();
+    }
+
+    public static UserDao getInstance() {
+        return Handler.INSTANCE;
+    }
+
     @Override
     public boolean create(User user) {
         boolean isCreated;
@@ -43,7 +51,7 @@ public class MySqlUserDao implements UserDao{
     public User getUserById(int userId) {
         User user = null;
         try (Connection connection = connectionPool.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(UserTable.GET_USER)) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(UserTable.GET_USER_BY_ID)) {
                 preparedStatement.setInt(1, userId);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -58,6 +66,29 @@ public class MySqlUserDao implements UserDao{
         } catch (SQLException e) {
             System.out.println(ExceptionMessage.USER_GET_BY_ID_SQL_EXCEPTION);
             e.printStackTrace();
+        }
+        return user;
+    }
+
+    @Override
+    public User getUserByLoginInfo(String login, String password){
+        User user = null;
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(UserTable.GET_USER_BY_LOGIN_INFO)){
+                preparedStatement.setString(1, login);
+                preparedStatement.setString(2, password);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                if (resultSet.next()) {
+                    user = new User(
+                            resultSet.getInt(UserTable.USER_ID),
+                            resultSet.getString(UserTable.LOGIN),
+                            resultSet.getString(UserTable.PASSWORD),
+                            resultSet.getBoolean(UserTable.IS_TEACHER));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.toString());
         }
         return user;
     }
@@ -118,13 +149,5 @@ public class MySqlUserDao implements UserDao{
         }
 
         return list;
-    }
-
-    private static class Handler {
-        private static final MySqlUserDao INSTANCE = new MySqlUserDao();
-    }
-
-    public static UserDao getInstance() {
-        return Handler.INSTANCE;
     }
 }

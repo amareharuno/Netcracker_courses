@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface CourseDao {
-    public boolean create(Course course) throws SQLException;
-    public Course getCourseById(int key) throws SQLException;
-    public boolean update(Course course) throws SQLException;
-    public boolean delete(int courseId) throws SQLException;
+    public boolean create(Course course);
+    public Course getCourseById(int key);
+    public boolean update(Course course);
+    public boolean delete(int courseId);
 
     public List<Course> getAll() throws SQLException;
 }

@@ -40,7 +40,7 @@
                         <h1>Sign up to Courses</h1>
                         <h3>Create your personal account</h3>
                         <hr class="intro-divider">
-                        <form class="list-inline">
+                        <form class="list-inline" action="controller">
                             <p>
                                 <input class="lead" type="text" name="firstName" placeholder="First name" required style="color: #122b40"><br>
                                 <input class="lead" type="text" name="lastName" placeholder="Last name" required style="color: #122b40"><br>
@@ -55,11 +55,11 @@
                                 <br>
                                 <input class="btn btn-default btn-lg" type="submit" value="Create an account">
                             </p>
+                            <label>
+                                <input type="checkbox" name="isTeacher">
+                                I'm a teacher.
+                            </label>
                         </form>
-                        <label>
-                            <input type="checkbox" name="isTeacher">
-                            I'm a teacher.
-                        </label>
                         <p class="network-name">
                             <br>
                             I have an account. <a href="signInForm.html" style="color: #5bc0de"><u>Sign In</u></a>

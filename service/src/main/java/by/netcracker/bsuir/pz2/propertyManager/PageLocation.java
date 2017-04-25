@@ -5,14 +5,17 @@ import by.netcracker.bsuir.pz2.enumeration.PageLocationKey;
 import java.io.*;
 import java.util.Properties;
 
-public class PageLocation {
-    private final String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath()
-            + "pageLocation.properties";
-    private File pageLocationPropertyFile = new File(PROP_FILE_LOCATION);
+public enum  PageLocation {
+    INSTANCE;
+
     private Properties pageLocationProperties = new Properties();
 
     private PageLocation() {
         try {
+            String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath()
+                    + "pageLocation.properties";
+            System.out.println("PROP_FILE_LOCATION: " + PROP_FILE_LOCATION);
+            File pageLocationPropertyFile = new File(PROP_FILE_LOCATION);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(pageLocationPropertyFile));
             pageLocationProperties.load(bufferedReader);
         } catch (FileNotFoundException exception) {
@@ -20,14 +23,6 @@ public class PageLocation {
         } catch (IOException e) {
             System.out.println("IOException (PageLocation)");
         }
-    }
-
-    private static class Holder {
-        private static final PageLocation INSTANCE = new PageLocation();
-    }
-
-    public static PageLocation getInstance() {
-        return Holder.INSTANCE;
     }
 
     public String getPageLocation(PageLocationKey propertyKey) {

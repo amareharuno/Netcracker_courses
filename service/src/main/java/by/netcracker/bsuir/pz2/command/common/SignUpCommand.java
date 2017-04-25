@@ -49,7 +49,7 @@ public class SignUpCommand implements Command {
             // в метод create и запрос добавить поле userId
 
             mySqlDaoFactory.getTeacherDao().create(teacher);
-            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.TEACHER_PROFILE);
+            pathToPage = PageLocation.INSTANCE.getPageLocation(PageLocationKey.TEACHER_PROFILE);
         }
         else {
             Student student = new Student(firstName, lastName, middleName);
@@ -57,7 +57,7 @@ public class SignUpCommand implements Command {
             // то же, что для учителя
 
             mySqlDaoFactory.getStudentDao().create(student);
-            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
+            pathToPage = PageLocation.INSTANCE.getPageLocation(PageLocationKey.STUDENT_PROFILE);
         }
 
         return pathToPage;

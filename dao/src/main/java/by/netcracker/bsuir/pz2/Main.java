@@ -17,10 +17,8 @@ public class Main {
         Teacher teacher = new Teacher("Eric", "Cat", "Gerald");
         Course course = new Course("Math", "Magic Numbers", 2, 75, teacher);
 
-        // инициализация ConnectionPool
         try {
-            MySqlDaoFactory mySqlDaoFactory = (MySqlDaoFactory) DaoFactory.getDaoFactory(SourceType.MY_SQL);
-            MySqlTeacherDao mySqlTeacherDao = (MySqlTeacherDao) mySqlDaoFactory.getTeacherDao();
+            MySqlDaoFactory mySqlDaoFactory = MySqlDaoFactory.getInstance();
             MySqlCourseDao mySqlCourseDao = (MySqlCourseDao) mySqlDaoFactory.getCourseDao();
             mySqlCourseDao.create(course);
 

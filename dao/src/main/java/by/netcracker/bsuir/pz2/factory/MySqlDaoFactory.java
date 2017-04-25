@@ -11,34 +11,34 @@ import by.netcracker.bsuir.pz2.mysql.MySqlUserDao;
 
 public class MySqlDaoFactory extends DaoFactory {
 
+    private static MySqlDaoFactory instance = null;
     private MySqlDaoFactory() {
     }
 
-    private static class Handler {
-        private static final MySqlDaoFactory INSTANCE = new MySqlDaoFactory();
-    }
-
-    public static MySqlDaoFactory getInstance() {
-        return Handler.INSTANCE;
+    public static synchronized MySqlDaoFactory getInstance() {
+        if (instance == null) {
+            instance = new MySqlDaoFactory();
+        }
+        return instance;
     }
 
     @Override
     public UserDao getUserDao() {
-        return MySqlUserDao.getInstance();
+        return MySqlUserDao.INSTANCE;
     }
 
     @Override
     public CourseDao getCourseDao() {
-        return MySqlCourseDao.getInstance();
+        return MySqlCourseDao.INSTANCE;
     }
 
     @Override
     public TeacherDao getTeacherDao() {
-        return MySqlTeacherDao.getInstance();
+        return MySqlTeacherDao.INSTANCE;
     }
 
     @Override
     public StudentDao getStudentDao() {
-        return MySqlStudentDao.getInstance();
+        return MySqlStudentDao.INSTANCE;
     }
 }

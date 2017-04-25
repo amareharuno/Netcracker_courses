@@ -13,20 +13,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlUserDao implements UserDao{
+public enum MySqlUserDao implements UserDao{
+
+    INSTANCE;
 
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
-
-    private MySqlUserDao() {
-    }
-
-    private static class Holder {
-        private static final MySqlUserDao INSTANCE = new MySqlUserDao();
-    }
-
-    public static UserDao getInstance() {
-        return Holder.INSTANCE;
-    }
 
     @Override
     public boolean create(User user) {

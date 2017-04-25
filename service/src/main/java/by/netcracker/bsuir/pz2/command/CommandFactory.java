@@ -5,18 +5,9 @@ import by.netcracker.bsuir.pz2.enumeration.CommandType;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CommandFactory {
+public enum  CommandFactory {
 
-    private CommandFactory() {
-    }
-
-    private static final class Handler {
-        private static final CommandFactory INSTANCE = new CommandFactory();
-    }
-
-    public static CommandFactory getInstance() {
-        return Handler.INSTANCE;
-    }
+    INSTANCE;
 
     public Command createCommand (HttpServletRequest request) {
         CommandType commandType = defineCommand(request);

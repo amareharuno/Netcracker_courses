@@ -13,20 +13,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlCourseDao implements CourseDao {
+public enum MySqlCourseDao implements CourseDao {
+
+    INSTANCE;
 
     private static ConnectionPool connectionPool = ConnectionPool.getInstance();
-
-    private MySqlCourseDao() {
-    }
-
-    private static class Holder {
-        private static final MySqlCourseDao INSTANCE = new MySqlCourseDao();
-    }
-
-    public static MySqlCourseDao getInstance() {
-        return Holder.INSTANCE;
-    }
 
     public boolean create(Course course) {
         boolean isCreated;
@@ -63,7 +54,7 @@ public class MySqlCourseDao implements CourseDao {
                             resultSet.getString(CourseTable.COURSE_NAME),
                             resultSet.getInt(CourseTable.LESSONS_COUNT),
                             resultSet.getInt(CourseTable.LESSON_DURATION),
-                            MySqlTeacherDao.getInstance().getTeacherById(resultSet.getInt(CourseTable.TEACHER_ID)));
+                            MySqlTeacherDao.INSTANCE.getTeacherById(resultSet.getInt(CourseTable.TEACHER_ID)));
                 }
             }
         } catch (SQLException e) {
@@ -122,7 +113,7 @@ public class MySqlCourseDao implements CourseDao {
                     course.setLessonsCount(resultSet.getInt(CourseTable.LESSONS_COUNT));
                     course.setLessonDuration(resultSet.getInt(CourseTable.LESSON_DURATION));
                     course.setCourseDuration(resultSet.getInt(CourseTable.COURSE_DURATION));
-                    course.setTeacher(MySqlTeacherDao.getInstance().getTeacherById(resultSet.getInt(CourseTable.TEACHER_ID)));
+                    course.setTeacher(MySqlTeacherDao.INSTANCE.getTeacherById(resultSet.getInt(CourseTable.TEACHER_ID)));
                     list.add(course);
                 }
             }

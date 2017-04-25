@@ -18,7 +18,7 @@ public class ConnectionPool {
         dataSource.setInitialSize(Integer.parseInt(propertyManager.getDbProperty(MySqlPropertyKey.SQL_DB_POOL_SIZE)));
     }
 
-    private static class Holder {
+    private static final class Holder {
         private static final ConnectionPool INSTANCE = new ConnectionPool();
     }
 

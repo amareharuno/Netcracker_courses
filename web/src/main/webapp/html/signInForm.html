@@ -40,7 +40,8 @@
                         <h1>Sign in to Courses</h1>
                         <h3>Please enter your login and password</h3>
                         <hr class="intro-divider">
-                        <form class="list-inline" action="controller">
+                        <form class="list-inline" action="/controller">
+                            <input type="hidden" name="command" value="login">
                             <p>
                                 <input class="lead" type="text" name="login" placeholder="Login" required style="color: #122b40">
                                 <br>

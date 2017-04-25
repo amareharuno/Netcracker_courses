@@ -5,14 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.netcracker.bsuir</groupId>
-    <artifactId>eremeeva.pz2</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>courses</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>courses</name>
+
+    <packaging>pom</packaging>
 
     <modules>
-        <module>web</module>
         <module>dao</module>
         <module>service</module>
+        <module>web</module>
     </modules>
 
     <dependencies>
@@ -27,6 +29,17 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.1</version>
         </dependency>
     </dependencies>
 

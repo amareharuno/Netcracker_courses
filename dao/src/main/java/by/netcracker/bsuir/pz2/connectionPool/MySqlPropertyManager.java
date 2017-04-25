@@ -6,13 +6,16 @@ import java.io.*;
 import java.util.Properties;
 
 public class MySqlPropertyManager {
-    private final String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath()
-            + "mysqldb.properties";
-    private File bdPropertyFile = new File(PROP_FILE_LOCATION);
+
     private Properties bdProperties = new Properties();
+    private final String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath() + "mysqldb.properties";
+//    private final String PROP_FILE_LOCATION = System.getProperty("user.dir") + "\\dao\\src\\main\\resources\\" + "mysqldb.properties";
+
+    private File bdPropertyFile = new File(PROP_FILE_LOCATION);
 
     private MySqlPropertyManager() {
         try {
+            System.out.println("Prop file location: " + PROP_FILE_LOCATION);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(bdPropertyFile));
             bdProperties.load(bufferedReader);
         } catch (FileNotFoundException exception) {

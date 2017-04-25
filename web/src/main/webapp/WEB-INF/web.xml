@@ -14,6 +14,7 @@
         <servlet-name>Controller</servlet-name>
         <servlet-class>by.netcracker.bsuir.pz2.Controller</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/controller</url-pattern>

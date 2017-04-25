@@ -20,12 +20,12 @@ public class MySqlCourseDao implements CourseDao {
     private MySqlCourseDao() {
     }
 
-    private static class Handler {
+    private static class Holder {
         private static final MySqlCourseDao INSTANCE = new MySqlCourseDao();
     }
 
     public static MySqlCourseDao getInstance() {
-        return Handler.INSTANCE;
+        return Holder.INSTANCE;
     }
 
     public boolean create(Course course) {

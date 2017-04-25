@@ -40,8 +40,9 @@
                         <h1>Sign up to Courses</h1>
                         <h3>Create your personal account</h3>
                         <hr class="intro-divider">
-                        <form class="list-inline" action="controller">
+                        <form class="list-inline" action="/controller" method="post">
                             <p>
+                                <input type="hidden" name="command" value="register">
                                 <input class="lead" type="text" name="firstName" placeholder="First name" required style="color: #122b40"><br>
                                 <input class="lead" type="text" name="lastName" placeholder="Last name" required style="color: #122b40"><br>
                                 <input class="lead" type="text" name="middleName" placeholder="Middle name" required style="color: #122b40"><br>

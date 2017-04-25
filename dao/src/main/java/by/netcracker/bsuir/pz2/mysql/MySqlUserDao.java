@@ -20,12 +20,12 @@ public class MySqlUserDao implements UserDao{
     private MySqlUserDao() {
     }
 
-    private static final class Handler {
+    private static class Holder {
         private static final MySqlUserDao INSTANCE = new MySqlUserDao();
     }
 
     public static UserDao getInstance() {
-        return Handler.INSTANCE;
+        return Holder.INSTANCE;
     }
 
     @Override

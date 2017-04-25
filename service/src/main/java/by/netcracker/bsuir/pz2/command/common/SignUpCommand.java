@@ -28,8 +28,13 @@ public class SignUpCommand implements Command {
         String password = request.getParameter(HttpRequestParameter.PASSWORD);
         String isTeacherChecked = request.getParameter(HttpRequestParameter.IS_TEACHER); // не забыть проверить, подходит или нет
 
-        boolean isTeacher;
-        isTeacher = isTeacherChecked.equals("on");
+//        boolean isTeacher = false;
+        System.out.println("isTeacherChecked - "+ isTeacherChecked);
+
+        boolean isTeacher = false;
+        if (isTeacherChecked.equals("on")){
+            isTeacher = true;
+        }
 
         DaoFactory mySqlDaoFactory = MySqlDaoFactory.INSTANSE;
 

@@ -17,7 +17,7 @@ public enum  MySqlTeacherDao implements TeacherDao {
 
     INSTANCE;
 
-    private ConnectionPool connectionPool = ConnectionPool.getInstance();
+    private ConnectionPool connectionPool = ConnectionPool.INSTANCE;
 
     @Override
     public boolean create(Teacher teacher) {

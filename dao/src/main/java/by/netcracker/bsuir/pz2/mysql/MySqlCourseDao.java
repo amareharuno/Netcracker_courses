@@ -17,7 +17,7 @@ public enum MySqlCourseDao implements CourseDao {
 
     INSTANCE;
 
-    private static ConnectionPool connectionPool = ConnectionPool.getInstance();
+    private static ConnectionPool connectionPool = ConnectionPool.INSTANCE;
 
     public boolean create(Course course) {
         boolean isCreated;

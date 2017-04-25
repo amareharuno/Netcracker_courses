@@ -17,7 +17,7 @@ public enum MySqlUserDao implements UserDao{
 
     INSTANCE;
 
-    private ConnectionPool connectionPool = ConnectionPool.getInstance();
+    private ConnectionPool connectionPool = ConnectionPool.INSTANCE;
 
     @Override
     public boolean create(User user) {

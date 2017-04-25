@@ -18,7 +18,7 @@ public class Main {
         Course course = new Course("Math", "Magic Numbers", 2, 75, teacher);
 
         try {
-            MySqlDaoFactory mySqlDaoFactory = MySqlDaoFactory.getInstance();
+            MySqlDaoFactory mySqlDaoFactory = MySqlDaoFactory.INSTANSE;
             MySqlCourseDao mySqlCourseDao = (MySqlCourseDao) mySqlDaoFactory.getCourseDao();
             mySqlCourseDao.create(course);
 

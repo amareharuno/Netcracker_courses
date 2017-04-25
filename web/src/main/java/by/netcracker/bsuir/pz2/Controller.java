@@ -26,7 +26,7 @@ public class Controller extends HttpServlet {
     private void executeQuery(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        Command command = CommandFactory.getInstance().createCommand(request);
+        Command command = CommandFactory.INSTANCE.createCommand(request);
         String pathToPage = command.execute(request);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pathToPage);

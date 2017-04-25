@@ -9,18 +9,9 @@ import by.netcracker.bsuir.pz2.mysql.MySqlStudentDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlTeacherDao;
 import by.netcracker.bsuir.pz2.mysql.MySqlUserDao;
 
-public class MySqlDaoFactory extends DaoFactory {
+public enum  MySqlDaoFactory implements DaoFactory {
 
-    private static MySqlDaoFactory instance = null;
-    private MySqlDaoFactory() {
-    }
-
-    public static synchronized MySqlDaoFactory getInstance() {
-        if (instance == null) {
-            instance = new MySqlDaoFactory();
-        }
-        return instance;
-    }
+    INSTANSE;
 
     @Override
     public UserDao getUserDao() {

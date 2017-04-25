@@ -17,7 +17,7 @@ public enum  MySqlStudentDao implements StudentDao {
 
     INSTANCE;
 
-    private static ConnectionPool connectionPool = ConnectionPool.getInstance();
+    private static ConnectionPool connectionPool = ConnectionPool.INSTANCE;
 
     @Override
     public boolean create(Student student) {

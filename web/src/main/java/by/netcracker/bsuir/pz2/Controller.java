@@ -28,6 +28,7 @@ public class Controller extends HttpServlet {
         
         Command command = CommandFactory.INSTANCE.createCommand(request);
         String pathToPage = command.execute(request);
+//        pathToPage = "/index.html";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pathToPage);
         dispatcher.forward(request, response);

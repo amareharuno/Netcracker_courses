@@ -28,11 +28,11 @@ public class SignInCommand implements Command {
 
         if (user == null) {
             withErrorMessage = true;
-            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.SIGN_IN_PAGE);
+            pathToPage = PageLocation.INSTANCE.getPageLocation(PageLocationKey.SIGN_IN_PAGE);
             // такого пользователя не существует (поменять signInPage.html на signInPage.jsp)
         } else {
             withErrorMessage = false;
-            pathToPage = PageLocation.getInstance().getPageLocation(PageLocationKey.STUDENT_PROFILE);
+            pathToPage = PageLocation.INSTANCE.getPageLocation(PageLocationKey.STUDENT_PROFILE);
             // связать user с teacher & student. Узнать, чей профиль открывать
         }
 

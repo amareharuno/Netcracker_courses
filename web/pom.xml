@@ -24,8 +24,6 @@
                 <version>2.1.1</version>
                 <configuration>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                    <webappDirectory>src/main/webapp</webappDirectory>
-                    <outputDirectory>src/main/webapp/classes</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>

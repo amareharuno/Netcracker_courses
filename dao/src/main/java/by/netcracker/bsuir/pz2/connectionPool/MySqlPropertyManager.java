@@ -10,12 +10,12 @@ public enum  MySqlPropertyManager {
     INSTANCE;
 
     private Properties bdProperties = new Properties();
-//    private final String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath() + "mysqldb.properties";
-//    private final String PROP_FILE_LOCATION = System.getProperty("user.dir") + "\\dao\\src\\main\\resources\\" + "mysqldb.properties";
+    //    private final String PROP_FILE_LOCATION = System.getProperty("user.dir") + "\\dao\\src\\main\\resources\\" + "mysqldb.properties";
 
     MySqlPropertyManager() {
         try {
             String PROP_FILE_LOCATION = "F:\\NetCracker\\projects\\courses\\dao\\src\\main\\resources\\mysqldb.properties";
+//            String PROP_FILE_LOCATION = this.getClass().getResource("/").getPath() + "mysqldb.properties";
             System.out.println("Prop file location: " + PROP_FILE_LOCATION);
             File bdPropertyFile = new File(PROP_FILE_LOCATION);
 

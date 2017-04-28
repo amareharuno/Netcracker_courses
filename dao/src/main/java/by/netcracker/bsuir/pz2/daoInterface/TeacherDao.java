@@ -2,14 +2,13 @@ package by.netcracker.bsuir.pz2.daoInterface;
 
 import by.netcracker.bsuir.pz2.entity.Teacher;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface TeacherDao {
-    public boolean create(Teacher teacher);
-    public Teacher getTeacherById(int teacherId);
-    public boolean update(Teacher teacher);
-    public boolean delete(int teacherId);
+    boolean create(Teacher teacher);
+    Teacher getTeacherById(int teacherId);
+    boolean update(Teacher teacher);
+    boolean delete(int teacherId);
 
-    public List<Teacher> getAll() throws SQLException;
+    List<Teacher> getAll();
 }

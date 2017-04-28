@@ -11,7 +11,7 @@ public enum  ConnectionPool {
 
     private DataSource dataSource = new DataSource();
 
-    private ConnectionPool() {
+    ConnectionPool() {
         MySqlPropertyManager propertyManager = MySqlPropertyManager.INSTANCE;
         dataSource.setDriverClassName(propertyManager.getDbProperty(MySqlPropertyKey.SQL_DB_DRIVER));
         dataSource.setUrl(propertyManager.getDbProperty(MySqlPropertyKey.SQL_DB_URL));

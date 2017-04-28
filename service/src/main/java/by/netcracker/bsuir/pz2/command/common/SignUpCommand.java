@@ -7,7 +7,6 @@ import by.netcracker.bsuir.pz2.entity.Student;
 import by.netcracker.bsuir.pz2.entity.Teacher;
 import by.netcracker.bsuir.pz2.entity.User;
 import by.netcracker.bsuir.pz2.enumeration.PageLocationKey;
-import by.netcracker.bsuir.pz2.enumeration.SourceType;
 import by.netcracker.bsuir.pz2.factory.DaoFactory;
 import by.netcracker.bsuir.pz2.factory.MySqlDaoFactory;
 import by.netcracker.bsuir.pz2.propertyManager.PageLocation;
@@ -31,10 +30,8 @@ public class SignUpCommand implements Command {
 //        boolean isTeacher = false;
         System.out.println("isTeacherChecked - "+ isTeacherChecked);
 
-        boolean isTeacher = false;
-        if (isTeacherChecked.equals("on")){
-            isTeacher = true;
-        }
+        boolean isTeacher;
+        isTeacher = isTeacherChecked != null;
 
         DaoFactory mySqlDaoFactory = MySqlDaoFactory.INSTANSE;
 
